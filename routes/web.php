@@ -21,7 +21,7 @@ Route::get('/prodotti', function () {
 
     $pasta = config('pasta-file'); //pasta-file è il nome del file dentro la cartella config
 
-    $lunga = [];
+    /*$lunga = [];
     $corta = [];
     $cortissima = [];
 
@@ -33,11 +33,22 @@ Route::get('/prodotti', function () {
         } else {
             $cortissima[] = $formato;
         }
-    }
+    }*/
+    //return view('prodotti', compact("lunga", "corta", "cortissima")); //uguale a ['lunga' => $lunga, 'corta' => $corta, 'cortissima' => $cortissima]
 
-    return view('prodotti', compact("lunga", "corta", "cortissima")); //uguale a ['lunga' => $lunga, 'corta' => $corta, 'cortissima' => $cortissima]
+    return view('prodotti', ['formati' => $pasta]);
 
 })->name('prodotti');
+
+
+Route::get('/dettaglio/{id}', function($id) {
+
+    $pasta = config('pasta-file');
+    $dettaglioPasta = $pasta[$id];
+
+    return view('pagina-dettaglio', ['formato' => $dettaglioPasta ]);
+
+})->name('dettaglio-prodotto');
 
 Route::get('/news', function () {
     return view('news');

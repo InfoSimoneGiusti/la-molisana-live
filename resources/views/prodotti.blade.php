@@ -4,7 +4,25 @@
 
 @section('content')
     <section class="prodotti">
-        <h1>Lunga</h1>
+
+        <h1>Formati:</h1>
+
+        <div class="container">
+            @foreach ($formati as $key => $formato)
+                <div class="card">
+                    <img src="{{$formato['src']}}" alt="{{$formato['titolo']}}">
+
+                    <a href="{{route('dettaglio-prodotto', ['id' => $key])}}">
+                        <h3>{{ $formato['titolo'] }}</h3>
+                    </a>
+
+                </div>
+            @endforeach
+        </div>
+
+
+
+       {{--  <h1>Lunga</h1>
 
         <div class="container">
             @foreach ($lunga as $formato)
@@ -37,6 +55,6 @@
                     <h3>{{ $formato['titolo'] }}</h3>
                 </div>
             @endforeach
-        </div>
+        </div> --}}
     </section>
 @endsection
