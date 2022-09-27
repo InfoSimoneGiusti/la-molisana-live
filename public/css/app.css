@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;
+
+0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+header ul {
+  margin: 30px 0px;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: #000;
+  padding: 20px;
+}
+
+header ul li a.active,
+header ul li a:hover {
+  background-color: rgb(218, 233, 254);
+}
+
+footer {
+  padding-top: 50px;
+}
+
+footer .mointains {
+  width: 100%;
+}
+
+footer .flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 25%;
+  border: solid 2px rgb(218, 233, 254);
+  min-height: 250px;
+  background-color: white;
+  padding: 15px;
+}
+
+.card h3 {
+  text-align: center;
+  color: #022B87;
+  font-size: 18px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.prodotti {
+  background-image: url("/images/fondo-pag-speciali.jpg");
+}
+
+.prodotti h1 {
+  text-align: center;
+  color: #022B87;
+  padding: 30px 0px;
+}
+
+.prodotti .container {
+  min-height: 300px;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dettaglio {
+  background-color: rgb(218, 233, 254);
+  text-align: center;
+}
+
+.dettaglio .titolo-prodotto {
+  font-size: 18px;
+  color: #022B87;
+  padding-top: 30px;
+}
+
+.dettaglio .descrizione {
+  text-align: left;
+  padding: 20px 0px;
+}
+

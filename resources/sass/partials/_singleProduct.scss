@@ -1,0 +1,17 @@
+@import './variables';
+
+.dettaglio {
+    background-color: $secondaryColor;
+    text-align: center;
+
+    .titolo-prodotto {
+        font-size: 18px;
+        color: $primaryColor;
+        padding-top: 30px;
+    }
+
+    .descrizione {
+        text-align: left;
+        padding: 20px 0px;
+    }
+}
