@@ -13,43 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-})->name('home');
-
-Route::get('/prodotti', function () {
-
-    $pasta = config('pasta-file'); //pasta-file è il nome del file dentro la cartella config
-
-    /*$lunga = [];
-    $corta = [];
-    $cortissima = [];
-
-    foreach($pasta as $formato) {
-        if ($formato['tipo'] == 'lunga') {
-            $lunga[] = $formato;
-        } else if ( $formato['tipo'] == 'corta' ) {
-            $corta[] = $formato;
-        } else {
-            $cortissima[] = $formato;
-        }
-    }*/
-    //return view('prodotti', compact("lunga", "corta", "cortissima")); //uguale a ['lunga' => $lunga, 'corta' => $corta, 'cortissima' => $cortissima]
-
-    return view('prodotti', ['formati' => $pasta]);
-
-})->name('prodotti');
-
-
-Route::get('/dettaglio/{id}', function($id) {
-
-    $pasta = config('pasta-file');
-    $dettaglioPasta = $pasta[$id];
-
-    return view('pagina-dettaglio', ['formato' => $dettaglioPasta ]);
-
-})->name('dettaglio-prodotto');
-
-Route::get('/news', function () {
-    return view('news');
-})->name('news');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/prodotti', 'PastaController@listProducts')->name('prodotti');
+Route::get('/dettaglio/{id}', 'PastaController@productDetail')->name('dettaglio-prodotto');
+Route::get('/news', 'HomeController@news')->name('news');
